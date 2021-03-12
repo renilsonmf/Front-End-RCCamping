@@ -171,3 +171,65 @@ html{scroll-behavior: smooth;}
 .sombra:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
+
+
+/* RELATORIOS */ 
+
+.modal-content {
+    background-color: #54a338;
+}
+
+.voltar_pagina {
+   display: flex;
+   justify-content: center;
+   margin-top: 2rem;
+}
+
+#tabela_data {
+    display: none;
+}
+
+#tabela_locacao {
+    display: none;
+    margin-bottom: 10rem;
+}
+
+#fecha-relatorio {
+    display: flex;
+    float: right;            
+}
+
+#tabela_nome {
+    display: none;
+}
+
+#fecha-relatorio:hover {
+    cursor: pointer;
+}
+
+.data_relatorio {
+    margin-top: 10rem;
+}
+
+.btn-locacao {
+  margin-left: 105px;
+}
+
+.cabecalho {
+    border-bottom: 1px solid beige;
+    top: 0;
+    position: fixed;
+    z-index: 10;
+    background-color: #7db569;
+    width: 100%;
+    margin-bottom: 3rem;
+    align-content: center!important;
+    float: right!important;   
+}
+
+.footer {
+    border-bottom: 2px solid white;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
