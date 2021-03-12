@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Camping</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <!-- Fonte para icones -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- TOPO -->
+    <div class="container-fluid bg-topo">
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a href="#" class="navbar-brand">
+                    <img src="img/logo.png" height="80" class="d-inline-block align-top">
+                </a>
+                <!-- Navegação responsiva -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
+                    <span class="navbar-toggler-icon text-light"></span>
+                </button>
+
+                <!-- Itens da navegação -->
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto text-light">
+                        <li class="nav-item">
+                            <a href="#lotesDisponiveis" class="nav-link text-light font-weight-bold scroll-page">Lotes
+                                Disponiveis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#clientes" class="nav-link text-light font-weight-bold scroll-page">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#lotesAlugados" class="nav-link text-light font-weight-bold scroll-page">Lotes
+                                Alugados</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav text-light ">
+                        <li class="nav-item">
+                            <a href="cadastro.html" class="btn btn-outline-light btn-sm p-2 " tabindex="-1" role="button">Cadastrar Cliente</a>
+                            <a href="cadastroLote.html" class="btn btn-outline-light btn-sm p-2" tabindex="-1" role="button">Inserir Novo Lote</a>
+                            <a href="cadastroLocacao.html" class="btn btn-outline-light btn-sm p-2" tabindex="-1" role="button">Cadastrar Locação</a>
+                            <a href="relatorios.html" class="btn btn-outline-light btn-sm p-2" tabindex="-1" role="button">Emitir Relatórios</a>
+                            <a href="login.html" class="btn btn-outline-light btn-sm p-2"><i class="fas fa-sign-out-alt">Sair</i></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Seção de Lotes disponiveis -->
+    <div id="lotesDisponiveis" class="container-fluid">
+        <div class="my-2 py-4">
+            <section class="container">
+                <header class="col-md-12">
+                    <h2 class="text-center ">Lotes Disponiveis
+                        <span class="underline"></span>
+                    </h2>
+                </header>
+                <div class="row py-4">
+                    <!-- Item 1 -->
+                    <div class="col-sm-6 col-md-3 col-xs-12">
+                        <div class="tabela-preco sombra">
+                            <div class="preco-detalhe">
+                                <h2>Lote 10</h2>
+                                <span>R$ 180,00</span>
+                                <ul>
+                                    <li>Área de 100m</li>
+                                    <li> Duas barracas por conta do espaço</li>
+                                    <li>Sombra apartir das 2 horas</li>
+                                    <li><button class="btn btn-outline-primary p-1 mx-1">Alterar</button><button class="btn btn-outline-danger p-1 mx-1">Excluir</button></li>
+                                </ul>
+                            </div>
+                            <!-- <div class="preco-botao">
+                                <a href="#" class="btn btn-preco">Reservar</a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                    <!-- ITEM 2  -->
+                    <div class="col-sm-6 col-md-3 col-xs-12">
+                        <div class="tabela-preco sombra">
+                            <div class="preco-detalhe">
+                                <h2>Lote 22</h2>
+                                <span>R$ 170,00</span>
+                                <ul>
+                                    <li>Área de 90m</li>
+                                    <li>Uma Barraca por conta do espaço</li>
+                                    <li>Arvores ao lado direito</li>
+                                    <li><button class="btn btn-outline-primary p-1 mx-1">Alterar</button><button class="btn btn-outline-danger p-1 mx-1">Excluir</button></li>
+
+                                </ul>
+                            </div>
+                            <!-- <div class="preco-botao">
+                                <a href="#" class="btn btn-preco">Reservar</a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                    <!-- ITEM 3 -->
+                    <div class="col-sm-6 col-md-3 col-xs-12">
+                        <div class="tabela-preco sombra">
+                            <div class="preco-detalhe">
+                                <h2>Lote 16</h2>
+                                <span>R$ 150,90</span>
+                                <ul>
+                                    <li>Área de 80m</li>
+                                    <li>Uma barraca por conta do espaço</li>
+                                    <li>Arvores ao lado esquerdo</li>
+                                    <li><button class="btn btn-outline-primary p-1 mx-1">Alterar</button><button class="btn btn-outline-danger p-1 mx-1">Excluir</button></li>
+
+                                </ul>
+                            </div>
+                            <!-- <div class="preco-botao">
+                                <a href="#" class="btn btn-preco">Reservar</a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                    <!-- ITEM 4  -->
+                    <div class="col-sm-6 col-md-3 col-xs-12">
+                        <div class="tabela-preco sombra">
+                            <div class="preco-detalhe">
+                                <h2>Lote 12</h2>
+                                <span>R$ 100,00</span>
+                                <ul>
+                                    <li>Área de 100m</li>
+                                    <li>Sem barracas</li>
+                                    <li>Arvores na parte frontal</li>
+                                    <li><button class="btn btn-outline-primary p-1 mx-1">Alterar</button><button class="btn btn-outline-danger p-1 mx-1">Excluir</button></li>
+                                </ul>
+                            </div>
+                            <!-- <div class="preco-botao">
+                                <a href="#" class="btn btn-preco">Reservar</a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Seção de Clientes -->
+    <div id="clientes" class="container-fluid py-4 bg-clientes">
+        <div class="py-2">
+            <div class="container-fluid">
+                <header class="col-md-12">
+                    <h2 class="text-center ">Clientes
+                        <span class="underline"></span>
+                    </h2>
+                </header>
+                <!-- TABELAAAAS -->
+                <div class="card mt-4 table-responsive">
+                    <div class="card-header">
+                        <form class="form-inline">
+                        <i class="fa fa-table col-6"> Todos os clientes cadastrados no camping </i>
+                          <input type="text" class="form-control mr-sm-2 col-4" placeholder="Pesquisar..."
+                            aria-label="Pesquisar">
+                            <button class="btn btn-primary my-2 my-sm-0" type="button">Buscar</button>
+                        </form>
+                    </div>
+                 
+                    <!-- Pra funcionar tem que por o ID correto do JS -->
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Lote</th>
+                                    <th>N° de Pessoas</th>
+                                    <th>Data de Locação</th>
+                                    <th>Estado</th>
+                                    <th>Cidade</th>
+                                    <th>Alterar/Excluir</th>
+
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Lote</th>
+                                    <th>N° de Pessoas</th>
+                                    <th>Data de Locação</th>
+                                    <th>Estado</th>
+                                    <th>Cidade</th>
+                                    <th>Alterar/Excluir</th>
+
+                                </tr>
+                            </tfoot>
+                            <!-- INSERÇÃO DE DADOS NA TABELA NO tbody -->
+                            <tbody>
+                                <tr>
+                                    <td>Renilson Moreira</td>
+                                    <td>555.555.755.78</td>
+                                    <td>60</td>
+                                    <td>5</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+
+
+
+
+                                </tr>
+                                <tr>
+                                    <td>Roberto Adami</td>
+                                    <td>444.222.455.78</td>
+                                    <td>79</td>
+                                    <td>4</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Renilson Moreira</td>
+                                    <td>555.555.755.78</td>
+                                    <td>60</td>
+                                    <td>5</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Roberto Adami</td>
+                                    <td>444.222.455.78</td>
+                                    <td>79</td>
+                                    <td>4</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Danyel Cezarino</td>
+                                    <td>444.222.455.78</td>
+                                    <td>19</td>
+                                    <td>4</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Richard</td>
+                                    <td>444.222.455.78</td>
+                                    <td>67</td>
+                                    <td>4</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Danyel Cesarino</td>
+                                    <td>444.222.455.78</td>
+                                    <td>44</td>
+                                    <td>4</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Richard</td>
+                                    <td>444.222.455.78</td>
+                                    <td>55</td>
+                                    <td>5</td>
+                                    <td>2011/04/25</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                    <td><button class="btn btn-primary p-1 mx-1">Alterar</button><button class="btn btn-danger p-1 mx-1">Excluir</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Seção Lotes Alugados Parallax -->
+    <div id="lotesAlugados" class="container-fluid bg-parallax mt-2">
+        <div class="py-4">
+            <section class="container">
+                <header class="col-md-12">
+                    <h2 class="text-center text-light">Lotes Alugados
+                        <span class="underline"></span>
+                    </h2>
+                    <p class="text-center text-light">Informações atualizadas em tempo real após qualquer dado </p>
+                </header>
+                <div class="row py-2">
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="fatos">
+                            <div class="icon">
+                                <i class="fa fa-clock"></i>
+                            </div>
+                            <div class="fatos-contador">
+                                <h3>+<span class="contar">10300</span></h3>
+                                <h4>Campings Alugados</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="fatos">
+                            <div class="icon">
+                                <i class="fa fa-book"></i>
+                            </div>
+                            <div class="fatos-contador">
+                                <h3><span class="contar">4</span></h3>
+                                <h4>Disponiveis no Momento</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="fatos">
+                            <div class="icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div class="fatos-contador">
+                                <h3><span class="contar">28970</span></h3>
+                                <h4>Clientes que visitaram nosso Camping</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                        <div class="fatos">
+                            <div class="icon">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="fatos-contador">
+                                <h3><span class="contar">4.8</span></h3>
+                                <h4>Média de Avaliação</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Rodapé 1-->
+    <footer class="container-fluid bg-rodape1">
+        <div class="container py-5">
+            <div class="row ">
+                <div class="col-md-6 mx-auto">
+                    <div class="card text-light mb-3 bg-card-rodape">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-map-signs mr-2 fa-2x icon-banner-rodape"></i>
+                                RC Camping</h4>
+                            <p class="card-text text-justify">
+                                Acesse os meios de comunicação abaixo para caso de duvidas
+                                ou problemas no sistema RCCamping
+                            </p>
+                            <h6><i class="fa fa-phone-square"> (48)99999-0909</i></h6>
+                            <h6><i class="fa fa-envelope "> Rccamping@meucamping.com</i></h6>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Botão flutuante -->
+                <button onclick="backToTop()" id="btnTop"><i class="fas fa-arrow-up fa-lg"></i></button>
+            </div> 
+            
+                <div class="col-md-2 mx-auto"><button class="btn btn-preco">Enviar cartão</button></div>
+           
+        </div>
+
+    </footer>
+    <!-- Rodapé 2 -->
+    <div class="container-fluid bg-rodape2">
+        <div class="container py-4">
+            <img src="img/logoAzul.png" class="img-fluid mx-auto d-block">
+            <div class="text-center pt-1">
+                <a href="https://www.facebook.com/" class="icone-social" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="https://www.instagram.com/" class="icone-social" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://twitter.com/login?lang=pt" class="icone-social" target="_blank"><i class="fab fa-twitter-square fa-lg"></i></a>
+                <a href="https://www.linkedin.com/home" class="icone-social" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JS Bootstrap -->
+    <script type="text/javascript" src="js/jquery-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

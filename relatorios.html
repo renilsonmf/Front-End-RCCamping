@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Camping | Relatorio</title>
+   
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <!-- Fonte para icones -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+</head>
+
+<body style="background-color: #7db569;">
+
+    <style>
+        .modal-content {
+            background-color: #54a338;
+        }
+
+        .voltar_pagina {
+           display: flex;
+           justify-content: center;
+           margin-top: 2rem;
+        }
+
+        #tabela_data {
+            display: none;
+        }
+
+        #tabela_locacao {
+            display: none;
+            margin-bottom: 10rem;
+        }
+
+        #fecha-relatorio {
+            display: flex;
+            float: right;            
+        }
+
+        #tabela_nome {
+            display: none;
+        }
+
+        #fecha-relatorio:hover {
+            cursor: pointer;
+        }
+
+        .data_relatorio {
+            margin-top: 10rem;
+        }
+
+        .btn-locacao {
+            margin-left: 4.0rem;
+        }
+
+        .cabecalho {
+            border-bottom: 1px solid beige;
+            top: 0;
+            position: fixed;
+            z-index: 10;
+            background-color: #7db569;
+            width: 100%;
+            margin-bottom: 3rem;
+            align-content: center!important;
+            float: right!important;   
+        }
+
+        .footer {
+            border-bottom: 2px solid white;
+            width: 100%;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+    </style>
+
+
+<div class="cabecalho">
+    <nav class="navbar navbar-expand-lg navbar-dark ml-5">
+        <a href="#" class="navbar-brand">
+            <img src="img/logo.png" height="80" class="d-inline-block align-top">
+        </a>
+        <!-- Navegação responsiva -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+            aria-controls="menu" aria-expanded="true" aria-label="Menu Colapso">
+            <span class="navbar-toggler-icon text-light"></span>
+        </button>
+
+        <!-- Itens da navegação -->
+        <div id="menu-navegacao" class="collapse navbar-collapse ml-5 pl-5">                
+            <ul class="navbar-nav text-light ml-5 pl-5">
+                <li class="nav-item ml-5 pl-5">                                              
+                    <a href="index.html" class="btn btn-outline-light btn-sm p-2"><i class="fas fa-sign-out-alt">Voltar</i></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+
+    <div class="container-fluid">
+        <header>
+            <img src="img/logo.png" class="img-fluid-sm mx-auto d-block img-camping">
+        </header>
+
+
+
+        <h1 class="text-center">Relatorio por Cliente</h1>
+          
+        <div class="container">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="nome">Nome do Cliente</label>
+                    <input type="text" class="form-control" id="nome" placeholder="EX: Alfrizio">                    
+                </div>              
+            </div>
+        </div>    
+            
+            <!-- Modal -->
+            <div class="btn-locacao">  
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalExemplo"  onclick="abreRelatorioNome()">
+                    Emitir
+                </button>                                  
+            </div>
+
+            <div class="container">
+                <div class="card mt-4 table-responsive" id="tabela_nome">
+                    <div class="card-header">
+                        <i class="fa fa-table"></i>
+                        Relatório emitido pelo nome do cliente
+                        <span id="fecha-relatorio" onclick="fechaRelatorioNome()">
+                            <svg width="2rem" height="2rem" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <!-- Pra funcionar tem que por o ID correto do JS -->
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Lote</th>
+                                    <th>N° de Pessoas</th>
+                                    <th>Data de Locação</th>
+                                    <th>Estado</th>
+                                    <th>Cidade</th>
+
+                                </tr>
+                            </thead>
+                        
+                            <!-- INSERÇÃO DE DADOS NA TABELA NO tbody -->
+                            <tbody>
+                                <tr>
+                                    <td>Renilson Moreira</td>
+                                    <td>555.555.755.78</td>
+                                    <td>60</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+
+
+
+                                </tr>
+                                <tr>
+                                    <td>Roberto Adami</td>
+                                    <td>444.222.455.78</td>
+                                    <td>79</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Florianópolis</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Renilson Moreira</td>
+                                    <td>555.555.755.78</td>
+                                    <td>60</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Palhoça</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Roberto Adami</td>
+                                    <td>444.222.455.78</td>
+                                    <td>79</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Alfredo Wagner</td>
+                                </tr>
+                                <tr>
+                                    <td>Danyel Cezarino</td>
+                                    <td>444.222.455.78</td>
+                                    <td>19</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Florianópolis</td>
+                                </tr>
+                                <tr>
+                                    <td>Richard</td>
+                                    <td>444.222.455.78</td>
+                                    <td>67</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                </tr>
+                                <tr>
+                                    <td>Danyel Cesarino</td>
+                                    <td>444.222.455.78</td>
+                                    <td>44</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Rancho Queimado</td>
+                                </tr>
+                                <tr>
+                                    <td>Richard</td>
+                                    <td>444.222.455.78</td>
+                                    <td>55</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Antonio Carlos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        <h1 class="text-center">Relatorio por Locações</h1>
+          
+        <div class="container">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="locacao">Numero do Lote</label>
+                    <input type="number" class="form-control" id="locacao" placeholder="EX: 1">
+                    <small id="emailHelp" class="form-text">
+                        insira o numero de um lote que esta cadastrado no sistema
+                    </small>
+                </div>              
+            </div>
+        </div>    
+            
+            <!-- Modal -->
+            <div class="btn-locacao">  
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalExemplo"  onclick="abreRelatorioLocacao()">
+                    Emitir
+                </button>                                  
+            </div>
+
+            <div class="container">
+                <div class="card mt-4 table-responsive" id="tabela_locacao">
+                    <div class="card-header">
+                        <i class="fa fa-table"></i>
+                        Relatório emitido por lotes mais locados
+                        <span id="fecha-relatorio" onclick="fechaRelatorioLocacao()">
+                            <svg width="2rem" height="2rem" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <!-- Pra funcionar tem que por o ID correto do JS -->
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%"
+                            cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Lote</th>
+                                    <th>CPF</th>
+                                    <th>Nome</th>
+                                    <th>N° de Pessoas</th>
+                                    <th>Data de Locação</th>
+                                    <th>Estado</th>
+                                    <th>Cidade</th>
+
+                                </tr>
+                            </thead>
+                        
+                            <!-- INSERÇÃO DE DADOS NA TABELA NO tbody -->
+                            <tbody>
+                                <tr>
+                                    <td>60</td>
+                                    <td>555.555.755.78</td>
+                                    <td>Renilson Moreira</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+
+
+
+                                </tr>
+                                <tr>
+                                    <td>79</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Roberto Adami</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Florianópolis</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>60</td>
+                                    <td>555.555.755.78</td>
+                                    <td>Renilson Moreira</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Palhoça</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>79</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Roberto Adami</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Alfredo Wagner</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Danyel Cezarino</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Florianópolis</td>
+                                </tr>
+                                <tr>
+                                    <td>67</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Richard</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>São José</td>
+                                </tr>
+                                <tr>
+                                    <td>44</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Danyel Cesarino</td>
+                                    <td>4</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Rancho Queimado</td>
+                                </tr>
+                                <tr>
+                                    <td>55</td>
+                                    <td>444.222.455.78</td>
+                                    <td>Richard</td>
+                                    <td>5</td>
+                                    <td>25/04/2011</td>
+                                    <td>SC</td>
+                                    <td>Antonio Carlos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div class="container mt-4 mb-3 data_relatorio">
+            <h1 class="text-center">Relatorio por Data</h1>
+            
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="inputdata">Data de Locação</label>
+                        <input type="date" class="form-control" id="inputdate">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="Estado">Municipios/Cidades</label>
+                        <select id="Estado" class="form-control">
+                            <option selected disabled>Escolher...</option>
+                            <option>São José</option>
+                            <option>Florianópolis</option>
+                            <option>Palhoça</option>
+                            <option>Biguaçu</option>
+                            <option>Alfredo Wagner</option>
+                            <option>Antonio Carlos</option>
+                            <option>Aguas Mornas</option>
+                        </select>
+                    </div>                  
+
+                </div>
+
+            
+            <!-- Modal -->
+            <div class="btn-data">  
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalExemplo"  onclick="abreRelatorioData()">
+                    Emitir
+                </button>                                  
+            </div>
+
+            <div class="card mt-4 table-responsive mb-5" id="tabela_data">
+                <div class="card-header">
+                    <i class="fa fa-table"></i>
+                    Relatório emitido por data
+                    <span id="fecha-relatorio" onclick="fechaRelatorioData()">
+                        <svg width="2rem" height="2rem" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                    </span>
+                </div>
+                <!-- Pra funcionar tem que por o ID correto do JS -->
+                <div class="card-body">
+                    <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%"
+                        cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Data de Locação</th>
+                                <th>CPF</th>
+                                <th>Lote</th>
+                                <th>N° de Pessoas</th>
+                                <th>Nome</th>
+                                <th>Estado</th>
+                                <th>Cidade</th>
+
+                            </tr>
+                        </thead>
+                     
+                        <!-- INSERÇÃO DE DADOS NA TABELA NO tbody -->
+                        <tbody>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>555.555.755.78</td>
+                                <td>60</td>
+                                <td>5</td>
+                                <td>Renilson Moreira</td>
+                                <td>SC</td>
+                                <td>São José</td>
+
+
+
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>79</td>
+                                <td>4</td>
+                                <td>Roberto Adami</td>
+                                <td>SC</td>
+                                <td>Florianópolis</td>
+
+
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>555.555.755.78</td>
+                                <td>60</td>
+                                <td>5</td>
+                                <td>Renilson Moreira</td>
+                                <td>SC</td>
+                                <td>Palhoça</td>
+
+
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>79</td>
+                                <td>4</td>
+                                <td>Roberto Adami</td>
+                                <td>SC</td>
+                                <td>Alfredo Wagner</td>
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>19</td>
+                                <td>4</td>
+                                <td>Danyel Cezarino</td>
+                                <td>SC</td>
+                                <td>Florianópolis</td>
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>67</td>
+                                <td>4</td>
+                                <td>Richard</td>
+                                <td>SC</td>
+                                <td>São José</td>
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>44</td>
+                                <td>4</td>
+                                <td>Danyel Cesarino</td>
+                                <td>SC</td>
+                                <td>Rancho Queimado</td>
+                            </tr>
+                            <tr>
+                                <td>25/04/2011</td>
+                                <td>444.222.455.78</td>
+                                <td>55</td>
+                                <td>5</td>
+                                <td>Richard</td>
+                                <td>SC</td>
+                                <td>Antonio Carlos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+                       
+        </div>
+     <div class="footer">
+         
+     </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+          
+        function abreRelatorioData(){
+            document.getElementById('inputdate').value = '';
+            document.getElementById('Estado').value = 'Escolher...';
+            document.getElementById('tabela_data').style.display = 'block';            
+        }
+        
+
+        function fechaRelatorioData(){
+            document.getElementById('tabela_data').style.display = 'none';  
+        }
+
+
+        function abreRelatorioLocacao(){
+            document.getElementById('locacao').value = '';
+            document.getElementById('tabela_locacao').style.display = 'block'; 
+        }
+
+        function fechaRelatorioLocacao(){
+            document.getElementById('tabela_locacao').style.display = 'none';  
+        }
+
+        function abreRelatorioNome(){
+            document.getElementById('nome').value = '';
+            document.getElementById('tabela_nome').style.display = 'block'; 
+        }
+
+        function fechaRelatorioNome() {
+            document.getElementById('tabela_nome').style.display = 'none'; 
+        }
+
+    </script>
+  
+</body>
+
+</html>

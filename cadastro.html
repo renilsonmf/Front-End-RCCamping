@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Camping | Cadastro</title>
+   
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <!-- Fonte para icones -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+</head>
+
+<body style="background-color: #7db569;">
+
+    <style>
+        .modal-content {
+            background-color: #54a338;
+        }
+
+        .msg-cliente {
+           text-align: center;
+           font-weight: 700;
+           color: white;
+           margin-top: 1rem;
+        }
+
+        .cabecalho {
+            border-bottom: 1px solid beige;
+            top: 0;
+            position: fixed;
+            z-index: 10;
+            background-color: #7db569;
+            width: 100%;
+            margin-bottom: 3rem;
+            align-content: center!important;
+            float: right!important;   
+        }
+
+        .conteudo {
+            margin-top: 8rem!important;
+            float: right!important;   
+        }
+
+        #menu-navegacao_header {
+            float: right!important;    
+        }
+
+        .cab-header {
+            background-color: black!important;
+            float: right!important;   
+        }
+
+        
+    </style>
+
+
+
+<div class="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark ml-5">
+            <a href="#" class="navbar-brand">
+                <img src="img/logo.png" height="80" class="d-inline-block align-top">
+            </a>
+            <!-- Navegação responsiva -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                aria-controls="menu" aria-expanded="true" aria-label="Menu Colapso">
+                <span class="navbar-toggler-icon text-light"></span>
+            </button>
+
+            <!-- Itens da navegação -->
+            <div id="menu-navegacao" class="collapse navbar-collapse ml-5 pl-5">                
+                <ul class="navbar-nav text-light ml-5 pl-5">
+                    <li class="nav-item ml-5 pl-5"> 
+                        <a href="index.html" class="btn btn-outline-light btn-sm p-2"><i class="fas fa-sign-out-alt">Voltar</i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+</div>
+
+
+
+    <div class="container-fluid conteudo">        
+        <div class="container mt-4 mb-3">
+            <h1 class="text-center">Informe os dados do cliente</h1>
+            <form class="text-light">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Ex: Renilson Moreira">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cpf">CPF</label>
+                        <input type="number" class="form-control" id="cpf" placeholder="Ex: 999.999.999-18">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="rg">RG</label>
+                        <input type="number" class="form-control" id="rg" placeholder="Ex: 9.999.999">
+                    </div>
+                </div>
+
+                   
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="email">E-mail</label>
+                        <input type="text" class="form-control" id="email" placeholder="Ex: alfrizio@outlookcom">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="telefone-fixo">N° Telefone Fixo</label>
+                        <input type="tel" class="form-control" id="telefone-fixo" placeholder="Ex: (xx) xxxx-xxxx">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="telefone-celular">N° Telefone Celular</label>
+                        <input type="tel" class="form-control" id="telefone-celular" placeholder="Ex: (xx) xxxxx-xxxx">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Ex: Rua das Cordas N° 76">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="local_origem">Local de Origem:</label>
+                        <input type="text" class="form-control" id="local_origem" placeholder="Ex: São José SC">
+                    </div>
+                </div>
+
+                                                      
+            </form>
+            <!-- Modal -->
+            <div class="mensagem">  
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo" onclick="abreModal();">
+                    Salvar
+                </button>  
+                <div class="modal fade" id="modal-beto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <p class="msg-cliente">Cliente Cadastrado com Sucesso!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <a href="index.html" class="btn btn-danger">Voltar</a> -->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function abreModal(){
+          document.getElementById('nome').value = '';
+          document.getElementById('cpf').value = '';
+          document.getElementById('rg').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('telefone-fixo').value = '';
+          document.getElementById('telefone-celular').value = '';
+          document.getElementById('endereco').value = '';
+          document.getElementById('local_origem').value = '';
+
+          var modal = document.querySelector('modal-beto')
+          $('#modal-beto').modal('show')
+          window.setInterval(function() {
+            $('#modal-beto').modal('hide')
+          }, 3000);
+}
+    </script>
+  
+</body>
+
+</html>
